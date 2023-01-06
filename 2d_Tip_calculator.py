@@ -16,4 +16,3 @@ suma = Bill_2 / People_2
 reasult = round(suma,2)
 
 print(f"Each person should pay: ${reasult}")
-
