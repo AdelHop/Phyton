@@ -1,3 +1,4 @@
+from replit import clear
 import random
 import Hangman_List
 
