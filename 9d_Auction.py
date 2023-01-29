@@ -7,7 +7,6 @@ def cls():
 
 users = []
 other_users = "Yes"
-
 def add_new_user(name2, bid2, users):
     new_user = {}
     new_user["name"] = name2
