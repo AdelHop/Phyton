@@ -16,24 +16,38 @@ operations = {
     "*": multiply,
     "/": divide
 }
-num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the secend number?: "))
-for symbol in operations:
-    print(symbol)
 
-operation_symbol = input("Pick any operation from the line above: ")
+def calculator():
+    question = "n"
+    answer = []
+    num3 = []
+    while question == "n" or question == "y":
+        if question == "y":
+            operation_symbol = input("Pick anather operation: ")
+            num3 = float(input("What's the next number?: "))
+            calculation_function = operations[operation_symbol]
+            final_answer = calculation_function(answer, num3)
+            print(f"{answer} {operation_symbol} {num3} = {final_answer}")
+            answer = final_answer
+            question = input(f"Type 'y' to continue calculating with {first_answer}, or type 'n' to exit.: ")
 
-calculation_function = operations[operation_symbol]
-first_answer = calculation_function(num1, num2)
 
-print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+        elif question == "n":
 
-operation_symbol = input("Pick anather operation from the line above: ")
-num3 =  int(input("What's the next number?: "))
-calculation_function = operations[operation_symbol]
-secend_answer = calculation_function(calculation_function(num1, num2), num3)
+            num1 = float(input("What's the first number?: "))
+            num2 = float(input("What's the secend number?: "))
+            for symbol in operations:
+                print(symbol)
 
-print(f"{first_answer} {operation_symbol} {num3} = {secend_answer}")
+            operation_symbol = input("Pick any operation from the line above: ")
+
+            calculation_function = operations[operation_symbol]
+            first_answer = calculation_function(num1, num2)
+            answer = first_answer
+            print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+            question = input(f"Type 'y' to continue calculating with {first_answer}, or type 'n' to exit.: ")
+
+calculator()
 
 # function = operations["*"]
 # function(2,3)
