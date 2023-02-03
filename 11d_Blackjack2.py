@@ -81,8 +81,8 @@ def play_game():
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
 
-    print(f"Your cards: {user_card}, current score: {user_score}")
-    print(f"Computer's final hand:{computer_card}, final score: {computer_score}")
+    print(f"Your cards: {user_cards}, current score: {user_score}")
+    print(f"Computer's final hand:{computer_cards}, final score: {computer_score}")
     print(compare(user_score, computer_score))
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
